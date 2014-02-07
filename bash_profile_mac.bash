@@ -91,11 +91,6 @@ alias grep='grep --color=auto'
 alias e="my_emacs"
 alias ec="my_emacsclient"
 
-# Git aliases
-alias gitclean="git clean -d -f -x"
-alias gitbig="git config http.postBuffer 524288000"
-alias gitsmall="git config --unset http.postBuffer"
-
 
 ################################################################################
 #
@@ -170,16 +165,3 @@ monitormdFunc() {
 alias monitormd=monitormdFunc
 
 
-################################################################################
-#
-# copyFromGit
-#
-# A command that copies the source code out of a Git repository while
-# ignoring non-source code files.
-#
-################################################################################
-copyFromGitFunc() {
-    kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
-}
-
-alias copyFromGit=copyFromGitFunc
