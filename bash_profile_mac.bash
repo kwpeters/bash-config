@@ -1,24 +1,52 @@
-echo 'Hello from .bashrc.'
+#!bash
+
+################################################################################
+#
+# Bash configuration specific to Mac OS X
+#
+################################################################################
+
+echo 'Performing Mac initialization (bash_profile_mac.bash)...'
 
 
 #-------------------------------------------------------------------------------
 # Setup PATH.
 #-------------------------------------------------------------------------------
 
-# bin folder shared across machines
-export PATH=~/kwp/home/bin:${PATH}
-
 # bin folder for this machine
 export PATH=~/bin:${PATH}
 
+#-------------------------------------------------------------------------------
+#
 # Android ADT bundle tools (required by cordova CLI)
-export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20130522/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20130522/sdk/tools
+#
+#-------------------------------------------------------------------------------
 
+# Old version(s)
+#export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20130522/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20130522/sdk/tools
+
+# Latest version
+export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20131030/sdk/tools
+
+#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20130522/sdk
+export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20131030/sdk
+
+
+#-------------------------------------------------------------------------------
+#
 # Juggernaut
-export PATH=${PATH}:/Users/kwpeters/kwp/home/dev/python/juggernaut
+#
+#-------------------------------------------------------------------------------
+export PATH=${PATH}:~/Dropbox/home/dev/juggernaut
 
+
+#-------------------------------------------------------------------------------
+#
 # JuggernautJS
-export PATH=${PATH}:~/kwp/home/dev/juggernautJS
+#
+#-------------------------------------------------------------------------------
+export PATH=${PATH}:~/Dropbox/home/dev/juggernautJS
+
 
 #-------------------------------------------------------------------------------
 # Editor Environment Variables
@@ -28,18 +56,18 @@ export EDITOR="my_emacsclient -n"
 export SUDO_EDITOR="my_emacsclient"
 
 
-export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20130522/sdk
-
 #-------------------------------------------------------------------------------
 # Setup Git command line completion
 #-------------------------------------------------------------------------------
-source ~/.git-completion.bash
+source "$CLOUDHOME/appdata/bash-config/.git-completion.bash"
+
 
 #-------------------------------------------------------------------------------
 # Setup the prompt
 #-------------------------------------------------------------------------------
 
 # Default Mac OS X prompt is '\h:\W \u\$'
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -68,16 +96,6 @@ alias gitclean="git clean -d -f -x"
 alias gitbig="git config http.postBuffer 524288000"
 alias gitsmall="git config --unset http.postBuffer"
 
-################################################################################
-#
-# Custom environment variables.
-#
-################################################################################
-
-export DROPBOXHOME=~/Dropbox/home
-export KWPHOME=~/kwp/home
-#export CLOUDHOME="$KWPHOME"
-export CLOUDHOME="$DROPBOXHOME"
 
 ################################################################################
 #
@@ -85,6 +103,7 @@ export CLOUDHOME="$DROPBOXHOME"
 #
 ################################################################################
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+
 
 ################################################################################
 #
@@ -99,6 +118,7 @@ ffFunc() {
 
 alias ff=ffFunc
 
+
 ################################################################################
 #
 # fif (Find In File)
@@ -111,6 +131,7 @@ fifFunc() {
 }
 
 alias fif=fifFunc
+
 
 ################################################################################
 #
@@ -133,8 +154,32 @@ neatoitFunc() {
 
 alias neatoit=neatoitFunc
 
+
+################################################################################
+#
+# monitormd
+#
+# A command that monitors markdown files and converts them to HTML.
+#
+################################################################################
 monitormdFunc() {
-    monitor.py --include md$ --cmd "md2html.py --cssFile /Users/kwpeters/kwp/home/dev/bootstrap/css/bootstrap.css --cssFile ~/kwp/home/dev/markdownConvCss/default.css"
+    # monitor.py --include md$ --cmd "md2html.py --cssFile /Users/kwpeters/Dropbox/home/dev/bootstrap/css/bootstrap.css --cssFile ~/tmp/default.css"
+    monitor.py --include md$ --cmd "md2html.js --cssFile /Users/kwpeters/Dropbox/home/dev/bootstrap/css/bootstrap.css --cssFile ~/tmp/default.css"
 }
 
 alias monitormd=monitormdFunc
+
+
+################################################################################
+#
+# copyFromGit
+#
+# A command that copies the source code out of a Git repository while
+# ignoring non-source code files.
+#
+################################################################################
+copyFromGitFunc() {
+    kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
+}
+
+alias copyFromGit=copyFromGitFunc
