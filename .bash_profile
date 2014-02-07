@@ -20,13 +20,13 @@ fi
 # Platform-specific initialization
 #
 if [[ $platform == 'Mac' ]]; then
-
-    export CLOUDHOME=~/Dropbox/home
+    export DROPBOXHOME=~/Dropbox/home
+    export CLOUDHOME=$DROPBOXHOME
     source "$CLOUDHOME/appdata/bash-config/bash_profile_mac.bash"
 
 elif [[ $platform == 'Windows' ]]; then
-
-    export CLOUDHOME=~
+    export DROPBOXHOME=~
+    export CLOUDHOME=$DROPBOXHOME
     source "$CLOUDHOME/appdata/bash-config/bash_profile_windows.bash"
 
 fi
