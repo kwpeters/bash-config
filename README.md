@@ -6,4 +6,4 @@ My bash shell configuration.
 
 1.  Clone this repo.
 
-2.  Move `.bash_profile` into the computer's home directory.
+2.  Copy `.bash_profile` into the computer's home directory.
