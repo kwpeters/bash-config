@@ -21,8 +21,26 @@ alias gitsmall="git config --unset http.postBuffer"
 # A command that copies the source code out of a Git repository while
 # ignoring non-source code files.
 #
+# Parameters:
+#     src
+#     dest
+#
 copyFromGitFunc() {
     kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
 }
 
 alias copyFromGit=copyFromGitFunc
+
+
+#
+# rmRemoteBranch
+#
+# A command to remove obtuse Git syntax for deleting a remote branch.
+#
+# $1   remoteName
+# $2   branchName
+#
+rmRemoteBranchFunc() {
+    git push $1 :$2
+}
+alias rmRemoteBranch=rmRemoteBranchFunc

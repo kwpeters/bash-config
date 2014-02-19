@@ -37,7 +37,7 @@ export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20131030/sdk
 # Juggernaut
 #
 #-------------------------------------------------------------------------------
-export PATH=${PATH}:~/Dropbox/home/dev/juggernaut
+export PATH=${PATH}:~/dev/juggernaut
 
 
 #-------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ export PATH=${PATH}:~/Dropbox/home/dev/juggernaut
 # JuggernautJS
 #
 #-------------------------------------------------------------------------------
-export PATH=${PATH}:~/Dropbox/home/dev/juggernautJS
+export PATH=${PATH}:~/dev/juggernautJS
 
 
 #-------------------------------------------------------------------------------
