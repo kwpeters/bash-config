@@ -44,3 +44,9 @@ rmRemoteBranchFunc() {
     git push $1 :$2
 }
 alias rmRemoteBranch=rmRemoteBranchFunc
+
+
+#
+# Juggernaut
+#
+alias hr="hr.py"
