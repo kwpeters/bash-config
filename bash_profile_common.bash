@@ -50,3 +50,4 @@ alias rmRemoteBranch=rmRemoteBranchFunc
 # Juggernaut
 #
 alias hr="hr.py"
+alias capcom="capcom.py"
