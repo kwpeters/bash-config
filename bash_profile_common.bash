@@ -51,3 +51,8 @@ alias rmRemoteBranch=rmRemoteBranchFunc
 #
 alias hr="hr.py"
 alias capcom="capcom.py"
+
+#
+# Python SimpleHTTPServer
+#
+alias serve="python -m SimpleHTTPServer 3000"
