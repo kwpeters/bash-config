@@ -10,6 +10,7 @@ echo 'Performing common initialization (bash_profile_common.bash)...'
 #
 # Git aliases
 #
+alias gs="git status"
 alias gitclean="git clean -d -f -x"
 alias gitbig="git config http.postBuffer 524288000"
 alias gitsmall="git config --unset http.postBuffer"
