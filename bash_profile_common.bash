@@ -55,4 +55,4 @@ alias capcom="capcom.py"
 #
 # Python SimpleHTTPServer
 #
-alias serve="python -m SimpleHTTPServer 3000"
+alias serve="python -m SimpleHTTPServer 3000 &"
