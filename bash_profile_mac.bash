@@ -77,7 +77,9 @@ export PS1="\n\! \[\033[00;34m\]\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n
 #-------------------------------------------------------------------------------
 # Use colors in the Terminal program.
 #-------------------------------------------------------------------------------
-alias ls='ls -lGF'
+
+# -l for long, -G for colors, -F to decorate file names, -A to show dot files
+alias ls='ls -lGFA'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
