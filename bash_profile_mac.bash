@@ -103,34 +103,6 @@ alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Framew
 
 ################################################################################
 #
-# ff (Find File)
-#
-# A command that searches for a file matching a regular expression.
-#
-################################################################################
-ffFunc() {
-    find . -iregex ".*$1.*" -print
-}
-
-alias ff=ffFunc
-
-
-################################################################################
-#
-# fif (Find In File)
-#
-# A command that searches for a regular expression within all files.
-#
-################################################################################
-fifFunc() {
-    find . -name "*" -type f -exec grep -HIn "$1" {} \;
-}
-
-alias fif=fifFunc
-
-
-################################################################################
-#
 # dotit
 #
 # A command that runs dot to produce a png and then opens the resulting image

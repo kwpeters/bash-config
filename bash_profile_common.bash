@@ -6,6 +6,48 @@
 
 echo 'Performing common initialization (bash_profile_common.bash)...'
 
+################################################################################
+#
+# ff (Find File)
+#
+# A command that searches for a file matching a regular expression.
+#
+################################################################################
+ffFunc() {
+    find . -iregex ".*$1.*" -print
+}
+
+alias ff=ffFunc
+
+
+################################################################################
+#
+# fif (Find In File)
+#
+# A command that searches for a regular expression within all files.
+#
+################################################################################
+fifFunc() {
+    find . -name "*" -type f -exec grep -HIn "$1" {} \;
+}
+
+alias fif=fifFunc
+
+
+################################################################################
+#
+# fifl (Find In File - show only file names)
+#
+# A command that searches for a regular expression within all files and prints
+# only the file names that contain matches.
+#
+################################################################################
+fiflFunc() {
+    find . -name "*" -type f -exec grep -HInl "$1" {} \;
+}
+
+alias fifl=fiflFunc
+
 
 #
 # Git aliases
