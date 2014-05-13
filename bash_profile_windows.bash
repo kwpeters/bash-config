@@ -21,6 +21,35 @@ alias ls='ls --color=auto -lA'
 
 ################################################################################
 #
+# Bash Git Prompt
+#
+# Gotten from:
+# https://github.com/magicmonty/bash-git-prompt
+#
+################################################################################
+# Set config variables first
+# GIT_PROMPT_ONLY_IN_REPO=1
+source "$CLOUDHOME/appdata/bash-git-prompt/gitprompt.sh"
+
+
+#
+# copyFromGit
+#
+# A command that copies the source code out of a Git repository while
+# ignoring non-source code files.
+#
+# Parameters:
+#     src
+#     dest
+#
+copyFromGitFunc() {
+    kcopy.py --ignore ".git" --ignore "node_modules" --ignore ".DS_Store" $1 $2
+}
+alias copyFromGit=copyFromGitFunc
+
+
+################################################################################
+#
 # WebStorm
 #
 ################################################################################

@@ -59,23 +59,6 @@ alias gitsmall="git config --unset http.postBuffer"
 
 
 #
-# copyFromGit
-#
-# A command that copies the source code out of a Git repository while
-# ignoring non-source code files.
-#
-# Parameters:
-#     src
-#     dest
-#
-copyFromGitFunc() {
-    kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
-}
-
-alias copyFromGit=copyFromGitFunc
-
-
-#
 # rmRemoteBranch
 #
 # A command to remove obtuse Git syntax for deleting a remote branch.
@@ -98,4 +81,4 @@ alias capcom="capcom.py"
 #
 # Python SimpleHTTPServer
 #
-alias serve="python -m SimpleHTTPServer 3000 &"
+alias serve="python -m SimpleHTTPServer 3001 &"

@@ -88,9 +88,29 @@ alias grep='grep --color=auto'
 # export CLICOLOR=1
 # export LSCOLORS=ExFxCxDxBxegedabagacad
 
+
+#-------------------------------------------------------------------------------
+# Editor aliases
+#-------------------------------------------------------------------------------
 # alias e="$EDITOR"
 alias e="my_emacs"
 alias ec="my_emacsclient"
+
+
+#
+# copyFromGit
+#
+# A command that copies the source code out of a Git repository while
+# ignoring non-source code files.
+#
+# Parameters:
+#     src
+#     dest
+#
+copyFromGitFunc() {
+    kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
+}
+alias copyFromGit=copyFromGitFunc
 
 
 ################################################################################
