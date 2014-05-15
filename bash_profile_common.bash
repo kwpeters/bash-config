@@ -28,7 +28,7 @@ alias ff=ffFunc
 #
 ################################################################################
 fifFunc() {
-    find . -name "*" -type f -exec grep -HIn "$1" {} \;
+    find . -name "*" -type f -exec grep -Hn --binary-files=without-match "$1" {} \;
 }
 
 alias fif=fifFunc
@@ -56,7 +56,7 @@ alias gs="git status"
 alias gitclean="git clean -d -f -x"
 alias gitbig="git config http.postBuffer 524288000"
 alias gitsmall="git config --unset http.postBuffer"
-
+alias gitbr="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
 
 #
 # rmRemoteBranch
