@@ -13,8 +13,10 @@ if [[ "$BASHPROFILE" != d* ]]; then
     platform='UNKNOWN'   # Possible values: Windows, Mac, UNKNOWN
     unamestr=`uname`
     if [[ $unamestr == MINGW32* ]]; then
+	echo 'Detected Windows'
         platform='Windows'
     elif [[ $unamestr == Darwin* ]]; then
+	echo 'Detected OSX'
         platform='Mac'
     else
         echo '========================================'
