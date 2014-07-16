@@ -57,6 +57,7 @@ alias gitclean="git clean -d -f -x"
 alias gitbig="git config http.postBuffer 524288000"
 alias gitsmall="git config --unset http.postBuffer"
 alias gitbr="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
+alias gitmy="git log --author=kwpeters --oneline -n 20"
 
 #
 # rmRemoteBranch

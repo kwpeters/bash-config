@@ -29,7 +29,7 @@ alias ls='ls --color=auto -lA'
 ################################################################################
 # Set config variables first
 # GIT_PROMPT_ONLY_IN_REPO=1
-source "$CLOUDHOME/appdata/bash-git-prompt/gitprompt.sh"
+# source "$CLOUDHOME/appdata/bash-git-prompt/gitprompt.sh"
 
 
 #
@@ -54,7 +54,7 @@ alias copyFromGit=copyFromGitFunc
 #
 ################################################################################
 wstormFunc() {
-    /c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 7.0.3/bin/WebStorm.exe $1
+    /c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 8.0/bin/WebStorm.exe $1
 }
 alias wstorm=wstormFunc
 
