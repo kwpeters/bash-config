@@ -36,13 +36,13 @@ if [[ "$BASHPROFILE" != d* ]]; then
     elif [[ $platform == 'Windows' ]]; then
         export DROPBOXHOME=~
         export CLOUDHOME=$DROPBOXHOME
-        source "$CLOUDHOME/appdata/bash-config/bash_profile_windows.bash"
+        source "$CLOUDHOME/bash_profile_windows.bash"
     fi
 
     #
     # Common initialization
     #
-    source "$CLOUDHOME/appdata/bash-config/bash_profile_common.bash"
+    source "$CLOUDHOME/bash_profile_common.bash"
 
     export BASHPROFILE="done"
 fi
