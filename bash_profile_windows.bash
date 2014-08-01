@@ -16,7 +16,8 @@ echo 'Performing Windows initialization (bash_profile_windows.bash)...'
 # --color=auto    Use color
 # -l              Long format
 # -A              Show all files (expect . and ..)
-alias ls='ls --color=auto -lA'
+# alias ls='ls --color=auto -lA'
+alias ls='ls -lA'
 
 
 ################################################################################
@@ -53,8 +54,11 @@ alias copyFromGit=copyFromGitFunc
 # WebStorm
 #
 ################################################################################
+# wstormFunc() {
+#     /c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 8.0/bin/WebStorm.exe $1
+# }
 wstormFunc() {
-    /c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 8.0/bin/WebStorm.exe $1
+    /c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 8.0/bin/WebStorm.exe `abspath.py $1`
 }
 alias wstorm=wstormFunc
 
