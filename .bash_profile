@@ -31,18 +31,15 @@ if [[ "$BASHPROFILE" != d* ]]; then
     if [[ $platform == 'Mac' ]]; then
         export DROPBOXHOME=~/Dropbox/home
         export CLOUDHOME=$DROPBOXHOME
-        source "$CLOUDHOME/appdata/bash-config/bash_profile_mac.bash"
+        source "$HOME/bash_profile_mac.bash"
+	source "$HOME/bash_profile_common.bash"
 
     elif [[ $platform == 'Windows' ]]; then
         export DROPBOXHOME=~
         export CLOUDHOME=$DROPBOXHOME
         source "$CLOUDHOME/bash_profile_windows.bash"
+        source "$CLOUDHOME/bash_profile_common.bash"
     fi
-
-    #
-    # Common initialization
-    #
-    source "$CLOUDHOME/bash_profile_common.bash"
 
     export BASHPROFILE="done"
 fi

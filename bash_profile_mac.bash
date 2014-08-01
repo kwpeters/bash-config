@@ -58,7 +58,7 @@ export SUDO_EDITOR="my_emacsclient"
 #-------------------------------------------------------------------------------
 # Setup Git command line completion
 #-------------------------------------------------------------------------------
-source "$CLOUDHOME/appdata/bash-config/.git-completion.bash"
+source "$HOME/.git-completion.bash"
 
 
 #-------------------------------------------------------------------------------
