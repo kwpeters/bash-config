@@ -83,3 +83,8 @@ alias capcom="capcom.py"
 # Python SimpleHTTPServer
 #
 alias serve="python -m SimpleHTTPServer 3001 &"
+
+browserSyncFunc() {
+    browser-sync start --server --files "**/*.css" --files "**/*.html" --files "**/*.js"
+}
+alias bs="browserSyncFunc"
