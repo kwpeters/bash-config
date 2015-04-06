@@ -23,12 +23,14 @@ export PATH=~/bin:${PATH}
 
 # Old version(s)
 #export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20130522/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20130522/sdk/tools
+#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20130522/sdk
+
+#export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20131030/sdk/tools
+#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20131030/sdk
 
 # Latest version
-export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20131030/sdk/tools
-
-#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20130522/sdk
-export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20131030/sdk
+export PATH=${PATH}:/development/android-sdk_r24.0.2-macosx/sdk/platform-tools:/development/android-sdk_r24.0.2-macosx/sdk/tools
+export ANDROID_HOME=/development/android-sdk_r24.0.2-macosx/sdk
 
 
 #-------------------------------------------------------------------------------
@@ -46,14 +48,30 @@ export PATH=${PATH}:~/dev/juggernaut
 #-------------------------------------------------------------------------------
 export PATH=${PATH}:~/dev/juggernautJS
 
+#-------------------------------------------------------------------------------
+#
+# JuggernautBash
+#
+#-------------------------------------------------------------------------------
+export PATH=${PATH}:~/dev/juggernautBash
+
+#-------------------------------------------------------------------------------
+#
+# rokMac
+#
+#-------------------------------------------------------------------------------
+export PATH=${PATH}:~/dev/rokMac
+
 
 #-------------------------------------------------------------------------------
 # Editor Environment Variables
 #-------------------------------------------------------------------------------
-export ALTERNATE_EDITOR="my_emacs"
-export EDITOR="my_emacsclient -n"
-export SUDO_EDITOR="my_emacsclient"
+#export ALTERNATE_EDITOR="my_emacs"
+#export EDITOR="my_emacsclient -n"
+#export SUDO_EDITOR="my_emacsclient"
 
+#export EDITOR=/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs
+export EDITOR=/usr/local/Cellar/emacs/24.4/bin/emacs
 
 #-------------------------------------------------------------------------------
 # Setup Git command line completion
@@ -87,14 +105,35 @@ alias grep='grep --color=auto'
 # export CLICOLOR=1
 # export LSCOLORS=ExFxCxDxBxegedabagacad
 
+#-------------------------------------------------------------------------------
+# Misc Aliases
+#-------------------------------------------------------------------------------
+alias vpn="f5vpn-login kwpeters@connect.rockwell.com; say Disconnected from VPN"
 
 #-------------------------------------------------------------------------------
 # Editor aliases
 #-------------------------------------------------------------------------------
-# alias e="$EDITOR"
-alias e="my_emacs"
-alias ec="my_emacsclient"
+alias e="$EDITOR"
 
+
+ecFunc() {
+    # Need to use a fucntion so I can put the "&" on the end.
+    /usr/local/Cellar/emacs/24.4/bin/emacsclient -n "$@" &
+}
+#alias ec="/usr/local/Cellar/emacs/24.4/bin/emacsclient"
+alias ec=ecFunc
+
+ewinFunc() {
+    # Need to use a fucntion so I can put the "&" on the end.
+    /usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs "$@" &
+}
+alias ewin=ewinFunc
+
+wstormFunc() {
+    #/Applications/WebStorm.app/Contents/MacOS/webide "$@" &
+    open -a /Applications/WebStorm.app "$@" &
+}
+alias wstorm=wstormFunc
 
 #
 # copyFromGit
@@ -106,10 +145,10 @@ alias ec="my_emacsclient"
 #     src
 #     dest
 #
-copyFromGitFunc() {
-    kcopy.py --ignore "/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
-}
-alias copyFromGit=copyFromGitFunc
+# copyFromGitFunc() {
+#     kcopy.py --ignore ""/\.git/" --ignore "/node_modules/" --ignore "\.DS_Store" $1 $2
+# }
+# alias copyFromGit=copyFromGitFunc
 
 
 ################################################################################
@@ -150,10 +189,7 @@ alias neatoit=neatoitFunc
 #
 ################################################################################
 monitormdFunc() {
-    # monitor.py --include md$ --cmd "md2html.py --cssFile /Users/kwpeters/Dropbox/home/dev/bootstrap/css/bootstrap.css --cssFile ~/tmp/default.css"
     monitor.py --include md$ --cmd "md2html.js --cssFile /Users/kwpeters/Dropbox/home/dev/bootstrap/css/bootstrap.css --cssFile ~/tmp/default.css"
 }
 
 alias monitormd=monitormdFunc
-
-
