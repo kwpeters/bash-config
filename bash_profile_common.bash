@@ -59,6 +59,11 @@ alias gitsmall="git config --unset http.postBuffer"
 alias gitbr="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
 alias gitmy="git log --author=kwpeters --oneline -n 20"
 
+gitDeliverFunc() {
+    git merge --no-ff $1
+}
+alias gitDeliver=gitDeliverFunc
+
 #
 # rmRemoteBranch
 #
@@ -76,7 +81,8 @@ alias rmRemoteBranch=rmRemoteBranchFunc
 #
 # Juggernaut
 #
-alias hr="hr.py"
+# Want to use "brew install hr" instead."
+# alias hr=""hr.py"
 alias capcom="capcom.py"
 
 #
@@ -84,7 +90,13 @@ alias capcom="capcom.py"
 #
 alias serve="python -m SimpleHTTPServer 3001 &"
 
-browserSyncFunc() {
-    browser-sync start --server --files "**/*.css" --files "**/*.html" --files "**/*.js"
-}
-alias bs="browserSyncFunc"
+# browserSyncServerFunc() {
+#     browser-sync start --server --files "**/*.css" --files "**/*.html" --files "**/*.js"
+# }
+# alias bsServer="browserSyncServerFunc"
+
+
+# browserSyncProxyFunc() {
+#     browser-sync start --proxy="localhost:$1" --files "**/*.css" --files "**/*.html" --files "**/*.js"
+# }
+# alias bsProxy="browserSyncProxyFunc"

@@ -32,7 +32,7 @@ if [[ "$BASHPROFILE" != d* ]]; then
         export DROPBOXHOME=~/Dropbox/home
         export CLOUDHOME=$DROPBOXHOME
         source "$HOME/bash_profile_mac.bash"
-	source "$HOME/bash_profile_common.bash"
+	    source "$HOME/bash_profile_common.bash"
 
     elif [[ $platform == 'Windows' ]]; then
         export DROPBOXHOME=~
@@ -48,3 +48,6 @@ fi
 
 
 
+
+export NVM_DIR="/Users/kwpeters/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

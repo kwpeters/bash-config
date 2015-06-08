@@ -46,7 +46,7 @@ export PATH=${PATH}:~/dev/juggernaut
 # JuggernautJS
 #
 #-------------------------------------------------------------------------------
-export PATH=${PATH}:~/dev/juggernautJS
+export PATH=${PATH}:~/dev/juggernautJS/src
 
 #-------------------------------------------------------------------------------
 #
@@ -108,7 +108,8 @@ alias grep='grep --color=auto'
 #-------------------------------------------------------------------------------
 # Misc Aliases
 #-------------------------------------------------------------------------------
-alias vpn="f5vpn-login kwpeters@connect.rockwell.com; say Disconnected from VPN"
+alias vpn="f5vpn-login kwpeters@connect.rockwell.com; say VPN closed"
+alias vpnint="f5vpn-login kwpeters@connectmay-int.ra.rockwell.com; say VPN closed"
 
 #-------------------------------------------------------------------------------
 # Editor aliases
