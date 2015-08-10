@@ -21,16 +21,8 @@ export PATH=~/bin:${PATH}
 #
 #-------------------------------------------------------------------------------
 
-# Old version(s)
-#export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20130522/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20130522/sdk/tools
-#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20130522/sdk
-
-#export PATH=${PATH}:/development/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/development/adt-bundle-mac-x86_64-20131030/sdk/tools
-#export ANDROID_HOME=/development/adt-bundle-mac-x86_64-20131030/sdk
-
-# Latest version
-export PATH=${PATH}:/development/android-sdk_r24.0.2-macosx/sdk/platform-tools:/development/android-sdk_r24.0.2-macosx/sdk/tools
-export ANDROID_HOME=/development/android-sdk_r24.0.2-macosx/sdk
+export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+export ANDROID_HOME=~/Library/Android/sdk
 
 
 #-------------------------------------------------------------------------------
@@ -71,7 +63,7 @@ export PATH=${PATH}:~/dev/rokMac
 #export SUDO_EDITOR="my_emacsclient"
 
 #export EDITOR=/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs
-export EDITOR=/usr/local/Cellar/emacs/24.4/bin/emacs
+export EDITOR=/usr/local/Cellar/emacs/24.5/bin/emacs
 
 #-------------------------------------------------------------------------------
 # Setup Git command line completion
@@ -119,14 +111,14 @@ alias e="$EDITOR"
 
 ecFunc() {
     # Need to use a fucntion so I can put the "&" on the end.
-    /usr/local/Cellar/emacs/24.4/bin/emacsclient -n "$@" &
+    /usr/local/Cellar/emacs/24.5/bin/emacsclient -n "$@" &
 }
 #alias ec="/usr/local/Cellar/emacs/24.4/bin/emacsclient"
 alias ec=ecFunc
 
 ewinFunc() {
     # Need to use a fucntion so I can put the "&" on the end.
-    /usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs "$@" &
+    /usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs "$@" &
 }
 alias ewin=ewinFunc
 
@@ -180,17 +172,3 @@ neatoitFunc() {
 }
 
 alias neatoit=neatoitFunc
-
-
-################################################################################
-#
-# monitormd
-#
-# A command that monitors markdown files and converts them to HTML.
-#
-################################################################################
-monitormdFunc() {
-    monitor.py --include md$ --cmd "md2html.js --cssFile /Users/kwpeters/Dropbox/home/dev/bootstrap/css/bootstrap.css --cssFile ~/tmp/default.css"
-}
-
-alias monitormd=monitormdFunc

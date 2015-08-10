@@ -13,11 +13,9 @@ echo 'Performing common initialization (bash_profile_common.bash)...'
 # A command that searches for a file matching a regular expression.
 #
 ################################################################################
-ffFunc() {
-    find . -iregex ".*$1.*" -print
+ff() {
+    find . -type f -iregex ".*$1.*" -print | grep -i $1 2>/dev/null
 }
-
-alias ff=ffFunc
 
 
 ################################################################################
@@ -27,11 +25,9 @@ alias ff=ffFunc
 # A command that searches for a regular expression within all files.
 #
 ################################################################################
-fifFunc() {
-    find . -name "*" -type f -exec grep -Hn --binary-files=without-match "$1" {} \;
+fif() {
+    find . -name "*" -type f -exec grep -Hn --binary-files=without-match "$1" {} \; | grep -i $1 2>/dev/null
 }
-
-alias fif=fifFunc
 
 
 ################################################################################
@@ -42,11 +38,12 @@ alias fif=fifFunc
 # only the file names that contain matches.
 #
 ################################################################################
-fiflFunc() {
+fifl() {
+    # Note: The output of this command is not sent through a subsequent "grep"
+    # command, because the file name may not contain the expression that was
+    # found within it, and we do not want the file name removed from the output.
     find . -name "*" -type f -exec grep -HInl "$1" {} \;
 }
-
-alias fifl=fiflFunc
 
 
 #
