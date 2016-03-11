@@ -179,3 +179,12 @@ neatoitFunc() {
 }
 
 alias neatoit=neatoitFunc
+
+################################################################################
+#
+# adblog
+#
+# For Android debugging
+#
+################################################################################
+alias adblog="adb logcat jxcore-log:v cordova*:v *:s"
