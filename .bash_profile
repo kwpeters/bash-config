@@ -3,7 +3,9 @@
 # because this file oddly seems to be executed twice when running on
 # Windows.
 #
-if [[ "$BASHPROFILE" != d* ]]; then
+echo 'Executing .bash_profile'
+
+# if [[ "$BASHPROFILE" != d* ]]; then
 
     echo 'Initializing bash shell (.bash_profile)...'
 
@@ -42,12 +44,4 @@ if [[ "$BASHPROFILE" != d* ]]; then
     fi
 
     export BASHPROFILE="done"
-fi
-
-
-
-
-
-
-export NVM_DIR="/Users/kwpeters/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# fi

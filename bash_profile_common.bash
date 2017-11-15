@@ -50,11 +50,12 @@ fifl() {
 # Git aliases
 #
 alias gs="git status"
-alias gitclean="git clean -d -f -x"
+alias gitclean="git clean -d -f -x --exclude=.idea --exclude=*.env"
 alias gitbig="git config http.postBuffer 524288000"
 alias gitsmall="git config --unset http.postBuffer"
 alias gitbr="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/"
 alias gitmy="git log --author=kwpeters --oneline -n 20"
+alias gitdiff="clear && git diff"
 
 gitDeliverFunc() {
     git merge --no-ff $1
@@ -74,6 +75,15 @@ rmRemoteBranchFunc() {
 }
 alias rmRemoteBranch=rmRemoteBranchFunc
 
+#
+# grep aliases
+#
+
+grepContextFunc() {
+    # A grep command with before and after context
+    grep --before-context 10 --after-context 10 $*
+}
+alias grep-context=grepContextFunc
 
 #
 # Juggernaut
@@ -97,3 +107,14 @@ alias serve="python -m SimpleHTTPServer 3001 &"
 #     browser-sync start --proxy="localhost:$1" --files "**/*.css" --files "**/*.html" --files "**/*.js"
 # }
 # alias bsProxy="browserSyncProxyFunc"
+
+
+
+alias notes="wstorm $CLOUDHOME/data/notes/"
+alias sp="echo; echo; echo; echo; echo; clear; hr"
+alias e="emacs"
+alias enw="emacs -nw"
+
+# An alias that allows you to easily run a locally installed node
+# executable (from node_modules/.bin).
+alias npm-exec='PATH=$(npm bin):$PATH'
