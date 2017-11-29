@@ -262,3 +262,11 @@ export NVM_DIR="/Users/kwpeters/.nvm"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+
+################################################################################
+#
+# Development aliases
+#
+################################################################################
+alias deleteallnodemodules="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
