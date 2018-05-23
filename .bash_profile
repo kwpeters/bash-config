@@ -34,7 +34,7 @@ echo 'Executing .bash_profile'
         export DROPBOXHOME=~/Dropbox/home
         export CLOUDHOME=$DROPBOXHOME
         source "$HOME/bash_profile_mac.bash"
-	    source "$HOME/bash_profile_common.bash"
+        source "$HOME/bash_profile_common.bash"
 
     elif [[ $platform == 'Windows' ]]; then
         export DROPBOXHOME=~
